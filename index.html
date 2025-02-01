@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Habit Tracker</h1>
+        <div id="theme-switcher">
+            <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        </div>
+
+    </header>
+    <main>
+        <section id="habit-overview">
+            <h2>Habit Overview</h2>
+            <div id="overview-content">
+                <p>Total Habits: <span id="total-habits">0</span></p>
+                <p>Habits Completed Today: <span id="completed-habits">0</span></p>
+                <p>Longest Streak: <span id="longest-streak">0 days</span></p>
+            </div>
+        </section>
+
+            
+
+
+        <div id="habits-container">
+            <h2 id="habits-header">Habits</h2>
+            <div id="habits-list"></div>
+        </div>
+
+            <section id="add-habit">
+              
+                <form id="habit-form">
+                    <h2>Add new habit</h2>
+                    <input type="text" id="habit-name" placeholder="enter new habit" required>
+                    <select id="habit-category">
+                        <option value="">select a category</option>
+                    </select>
+                    <select id="habit-frequency">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                    <button type="submit" class="add-button">Add Habit</button>
+                </form>
+            </section>
+            
+            <section id="category-management">
+                <h2>Manage Categories</h2>
+                <form id="category-form">
+                    <input type="text" id="new-category" placeholder="New category name" required>
+                    <button id="add-category" type="submit" class="add-button">Add Category</button>
+                </form>
+                <div id="category-list"></div>
+            </section>
+            <div id="circular-progress-container">
+                <svg id="circular-progress" width="120" height="120" viewBox="0 0 36 36">
+                    <defs>
+                        <linearGradient id="gradient-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#d713a4" />
+                            <stop offset="50%" stop-color="#c200d2" />
+                            <stop offset="100%" stop-color="#b310e3" />
+                        </linearGradient>
+                        <filter id="circle-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="rgba(0, 0, 0, 0.5)" />
+                        </filter>
+                    </defs>
+                    <!-- Background Circle -->
+                    <circle
+                        cx="18"
+                        cy="18"
+                        r="15.915"
+                        fill="none"
+                        stroke="#ddd"
+                        stroke-width="2"
+                       
+                        
+                        
+                    />
+                    <!-- Progress Circle -->
+                    <circle
+                        id="progress-circle"
+                        cx="18"
+                        cy="18"
+                        r="15.915"
+                        fill="none"
+                        stroke="url(#gradient-stroke)" 
+                        stroke-width="2"
+                        stroke-dasharray="100, 100"
+                        stroke-dashoffset="100"
+                        stroke-linecap="round"
+                        filter="url(#circle-shadow)"
+                    />
+                    
+                </svg>
+                <div id="progress-text">0%</div>
+            </div>
+            
+          
+            
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

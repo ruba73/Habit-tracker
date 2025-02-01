@@ -1,0 +1,280 @@
+/* General Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{font-family: "Montserrat", serif;}
+body {
+   
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: url(assets/Degradê\ \(1\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; /* Gradient background */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white; /* Slightly darker for contrast */
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+} .add-button{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1000px;
+}
+.add-button::after{
+    content: "";
+    position: absolute;
+    height: 130%;
+    width: 102%;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom right,#008cff,#e100ff);
+    z-index: -1;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: linear-gradient(to bottom right, #333333, #555555); /* Dark gradient */
+    color: #f1f1f1;
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #f1f1f1;
+    border: 1px solid #666;
+}
+
+/* Form Styles */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+form input, form select, form button {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form input:focus, form select:focus {
+    outline: none;
+    border-color: #008cba;
+    box-shadow: 0 0 5px rgba(0, 140, 186, 0.5);
+}
+
+/* Habit List Styles */
+#habits-list {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+}
+
+.habit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    background-color: white; /* Light orange for habits */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .habit {
+    background-color: #444;
+    color: #fff;
+}
+
+.habit.completed {
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: line-through;
+}
+
+/* Category List Styles */
+#category-list {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+}
+
+.category-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);/* Light peach for categories */
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+}
+
+body.dark-mode .category-item {
+    background-color: #555;
+    color: white;
+}
+
+/* Habit Overview Styles */
+#habit-overview {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+#habits-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: height 0.3s ease; /* Smooth height adjustment */
+}
+
+#habit-overview h2 {
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+#habit-overview div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: white;
+}
+
+#habit-overview div:last-child {
+    border-bottom: none;
+}
+
+#habit-overview span {
+    font-weight: bold;
+    color: #d2691e; 
+    display: block;
+    margin-top: 5px;
+    text-align: center;/* Chocolate for contrast */
+}
+
+body.dark-mode #habit-overview {
+    background-color: #444;
+    color: white;
+}
+
+body.dark-mode #habit-overview div {
+    border-bottom: 1px solid #555;
+}
+
+body.dark-mode #habit-overview span {
+    color: #f4a460; /* Sandy brown */
+}
+
+/* Buttons */
+#habits-list .complete-button {
+    background-image: linear-gradient(to right top, #b36ddf, #a768dc, #9b64da, #8e5fd7, #805bd4, #7b56cc, #7551c4, #704cbc, #7046ae, #6f40a0, #6c3b92, #693685);
+    color: white;
+    border-radius: 40px;
+}
+
+#habits-list .edit-button{
+background-image: linear-gradient(to right top, #b36ddf, #a768dc, #9b64da, #8e5fd7, #805bd4, #7b56cc, #7551c4, #704cbc, #7046ae, #6f40a0, #6c3b92, #693685);
+    color: white;
+    border-radius: 40px;
+}
+
+#habits-list .delete-button {
+    background-image: linear-gradient(to right top, #b36ddf, #a768dc, #9b64da, #8e5fd7, #805bd4, #7b56cc, #7551c4, #704cbc, #7046ae, #6f40a0, #6c3b92, #693685);
+    color: white;
+    border-radius: 40px;
+}
+.save-button{ background-image: linear-gradient(to right top, #b36ddf, #a768dc, #9b64da, #8e5fd7, #805bd4, #7b56cc, #7551c4, #704cbc, #7046ae, #6f40a0, #6c3b92, #693685);
+    color: white;
+    border-radius: 40px;}
+    /* Progress Bar Container */
+#progress-container {
+    width: 100%; /* Full width */
+    max-width: 500px; /* Limit width */
+    height: 20px; /* Bar height */
+    background-color: #ddd; /* Light gray background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Prevent bar from overflowing */
+    margin: 20px auto; /* Center it */
+}
+
+#circular-progress-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#circular-progress {
+    transform: rotate(-90deg); /* Rotate to start at the top */
+}
+
+#progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+body.dark-mode #progress-text {
+    color: white; /* Adjust for dark mode */
+}
+#progress-circle {
+    stroke:  linear-gradient(to right top, #d713a4, #d300b2, #cc00c1, #c200d2, #b310e3); /* New color (orange) */
+    stroke-width: 2;
+    stroke-dasharray: 100, 100;
+    stroke-dashoffset: 100;
+    stroke-linecap: round;
+}
